@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>stackoverflow39128418</title>
+        <meta charset="UTF-8"/>
+    </h:head>
+    <h:body>
+        <b:container id="container" fluid="true">
+            <h:form id="header">
+                <b:row style="margin: 1em; margin-top: 2em;">
+                    <b:column col-lg="3" col-md="3" col-sm="3" col-xs="12">
+                        <div align="center">
+                            <b:image value="/resources/img/Logo_120px.png"/>
+                        </div>
+                    </b:column>
+                    <b:column col-lg="9" col-md="9" col-sm="9" col-xs="12">
+                        <b:row style="width: 100%;">
+                            <b:row>
+                                <b:column col-lg="6" col-md="6" col-sm="6" col-xs="6">
+                                    <b:navLink value="WORKING Pages without carousel" onclick="ajax:navigationBean.setActiveMenu('working')"
+                                               update=":menu :contentPage" active="true"/>
+                                </b:column>
+                                <b:column col-lg="6" col-md="6" col-sm="6" col-xs="6">
+                                    <b:navLink value="NOT WORKING Pages with carousel" onclick="ajax:navigationBean.setActiveMenu('notWorking')"
+                                               update=":menu :contentPage"/>
+                                </b:column>
+                            </b:row>
+                        </b:row>
+                    </b:column>
+                </b:row>
+            </h:form>
+
+            <b:row>
+                <b:column id="menu" col-lg="3" col-md="3" col-sm="3" col-xs="12">
+                    <b:panel style="min-height: 400px;">
+                        <ui:include src="#{navigationBean.activeMenu}"/>
+                    </b:panel>
+                </b:column>
+                <b:column id="contentPage" col-lg="9" col-md="9" col-sm="9" col-xs="12">
+                    <b:panel style="min-height: 400px;">
+                        <ui:include src="#{navigationBean.activePage}"/>
+                    </b:panel>
+                </b:column>
+            </b:row>
+        </b:container>
+    </h:body>
+</html>
+

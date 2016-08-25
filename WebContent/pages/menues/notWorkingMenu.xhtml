@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:b="http://bootsfaces.net/ui"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <b:row>
+        <b:navLink value="Not Working Page 1" update=":contentPage"
+                   onclick="ajax:navigationBean.setActivePage('notWorkingPage1')"/>
+    </b:row>
+    <b:row>
+        <b:navLink value="Not Working Page 2" update=":contentPage"
+                   onclick="ajax:navigationBean.setActivePage('notWorkingPage2')"/>
+    </b:row>
+</ui:fragment>
+
